@@ -1,8 +1,5 @@
-# i3 config file (sugan0tech)
-# reference: https://i3wm.org/docs/userguide.html
-
 set $mod Mod4
-#custome lock screen
+#custom lock screen
 bindsym $mod+Ctrl+Shift+l exec --no-startup-id betterlockscreen --lock blur
 bindsym $mod+Shift+s exec --no-startup-id spectacle -r -b -c
 
@@ -13,7 +10,7 @@ exec_always --no-startup-id dunst
 #wallpaper
 exec_always --no-startup-id feh --no-fehbg --bg-fill '/home/sugan/Pictures/wallpaper/test.png'
 
-#floating window
+# floating window
 # floating pop up automatically
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -54,7 +51,12 @@ bindsym $mod+Shift+q kill
 #clipboard
 bindsym $mod+Shift+v exec "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
 # start rofi (a program launcher)
-bindsym $mod+d exec "rofi -modi window,drun,run -show drun -sidebar-mode -terminal termite -color-window '#000000, #000000, #000000' -color-normal '#000000, #b3e774, #000000, #b3e774, #000000' -color-active '#000000, #b3e774, #000000, #b3e774, #000000' -color-urgent '#000000, #b3e774, #000000, #b3e774, #000000'"
+# old
+# bindsym $mod+d exec "rofi -modi window,drun,run -show drun -sidebar-mode -terminal termite -color-window '#000000, #000000, #000000' -color-normal '#000000, #b3e774, #000000, #b3e774, #000000' -color-active '#000000, #b3e774, #000000, #b3e774, #000000' -color-urgent '#000000, #b3e774, #000000, #b3e774, #000000'"
+# new
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-6/launcher.sh
+# powermenu #todo facing bugs in nu config
+# bindsym $mod+p exec --no-startup-id powermenu_t2
 
 # Partial vim bindings for navigations
 # change focus
